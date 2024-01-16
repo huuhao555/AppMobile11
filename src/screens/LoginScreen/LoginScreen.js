@@ -18,7 +18,7 @@ const LoginScreen = () => {
 
 
   const onSignInPressed =() =>{
-   navigation.navigate('HomeApp')
+   navigation.navigate('MainHome')
   
   }
   const onForgotPasswordPressed =() =>{
