@@ -19,7 +19,7 @@ const MainScreen = () => {
       <Tab.Screen 
       name="Setting" 
       component={Setting} 
-      options={{tabBarIcon: () => <Text style={{fontSize:30,}}>⚙︎</Text>}}
+      options={{tabBarIcon: () => <Text style={{fontSize:20,}}>⚙️</Text>}}
       />
       <Tab.Screen 
       name="Profile" 
