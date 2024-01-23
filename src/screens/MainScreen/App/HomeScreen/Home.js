@@ -1,9 +1,6 @@
 import React, { useState } from 'react';
 import { View, SafeAreaView, Switch, StyleSheet, Text, ImageBackground } from 'react-native';
-import bgr from './bgr.webp'
-import bgr1 from './logo.jpeg'
-import bgr2 from '../../../../../assets/image/bgr3.jpg'
-import bgr3 from '../../../../../assets/image/bgr3.jpg'
+
 
 const HomeAppScreen = () => {
   const [isSwitch1Enabled, setSwitch1Enabled] = useState(false);
@@ -13,10 +10,7 @@ const HomeAppScreen = () => {
   const toggleSwitch2 = () => setSwitch2Enabled((prevState) => !prevState);
 
   return (
-    <ImageBackground
-      source={bgr3} 
-      style={styles.backgroundImage}
-    >
+   
       <SafeAreaView style={styles.safeAreaView}>
         <View style={styles.container}>
           <View style={styles.column}>
@@ -49,7 +43,7 @@ const HomeAppScreen = () => {
           </View>
         </View>
       </SafeAreaView>
-    </ImageBackground>
+ 
   );
 };
 

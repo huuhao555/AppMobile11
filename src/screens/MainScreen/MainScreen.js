@@ -3,7 +3,9 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Home from './App/HomeScreen';
 import Setting from './App/SettingScreen';
 import Profile from './App/ProfileScreen';
-import { Text } from 'react-native';
+import { Text, Image } from 'react-native';
+import micro from '../../../assets/image/micro.png'
+import home from '../../../assets/image/home.png'
 
 
 const Tab = createBottomTabNavigator();
@@ -12,15 +14,16 @@ const MainScreen = () => {
   return (
     <Tab.Navigator>
       <Tab.Screen 
-      name="Home" 
+      name="Dashboard" 
       component={Home} 
-      options={{tabBarIcon: () => <Text>🏠</Text>}}
+      options={{tabBarIcon: () => <Image source={home} style={{width: 25, height: 25}}/>}}
       />
       <Tab.Screen 
-      name="Setting" 
+      name="Home" 
       component={Setting} 
-      options={{tabBarIcon: () => <Text style={{fontSize:20,}}>⚙️</Text>}}
+      options={{tabBarIcon: () => <Image source={micro} style={{width: 25, height: 25}}/>}}
       />
+      
       <Tab.Screen 
       name="Profile" 
       component={Profile} 
