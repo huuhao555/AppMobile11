@@ -1,10 +1,9 @@
-
-
 import React, { useState } from 'react';
-import { View, SafeAreaView, StyleSheet, Text, ImageBackground } from 'react-native';
-
+import { View, SafeAreaView,Image, StyleSheet, Text, ImageBackground } from 'react-native';
+import menu from '../../../../../assets/image/menu.png'
 
 import SwitchComponent from '../../../../components/Switch/Switch';
+
 
 const HomeAppScreen = () => {
   const [isSwitch1Enabled, setSwitch1Enabled] = useState(false);
@@ -16,6 +15,7 @@ const HomeAppScreen = () => {
   return (
     
       <SafeAreaView style={styles.safeAreaView}>
+        <Image source={menu} style={styles.menu}/>
         <View style={styles.container}>
         <View style={styles.row}>
             <SwitchComponent
@@ -54,5 +54,13 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
   },
+  menu:{
+    position: 'absolute',
+    width: 25,
+    height: 25,
+    top: 10,
+    left: 5,
+    padding: 10,
+  }
 });
 export default HomeAppScreen;
