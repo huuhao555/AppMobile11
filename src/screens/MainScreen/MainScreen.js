@@ -133,7 +133,7 @@ const MainScreen = () => {
         style={{
           width: 40,
           height: 40,
-          tintColor: focused ? '#fff' : '#fff',
+          tintColor: focused ? '#fff' : '#ccc',
           marginTop: 10,
         }}
       />

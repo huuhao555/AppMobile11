@@ -5,6 +5,8 @@ import menu from '../../../../../assets/image/menu.png'
 import SwitchComponent from '../../../../components/Switch/Switch';
 
 
+
+
 const HomeAppScreen = () => {
   const [isSwitch1Enabled, setSwitch1Enabled] = useState(false);
   const [isSwitch2Enabled, setSwitch2Enabled] = useState(false);
@@ -31,6 +33,7 @@ const HomeAppScreen = () => {
               emoji="❄️"
             />
           </View>
+         
         </View>
       </SafeAreaView>
     
@@ -51,7 +54,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   row: {
-    flexDirection: 'row',
+    flexDirection: 'column',
     alignItems: 'center',
   },
   menu:{
