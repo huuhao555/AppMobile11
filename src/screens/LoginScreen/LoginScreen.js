@@ -18,14 +18,14 @@ const LoginScreen = () => {
   const navigation = useNavigation();
 
   const onSignInPressed = () => {
-if (!username) {
-  setUsernameError(Alert.alert('Lỗi', 'Vui lòng nhập tài khoản'));
-  return;
-}
-if (!password) {
-  setPasswordError(Alert.alert('Lỗi', 'Vui lòng nhập mật khẩu'));
-  return;
-}
+// if (!username) {
+//   setUsernameError(Alert.alert('Lỗi', 'Vui lòng nhập tài khoản'));
+//   return;
+// }
+// if (!password) {
+//   setPasswordError(Alert.alert('Lỗi', 'Vui lòng nhập mật khẩu'));
+//   return;
+// }
     navigation.navigate('MainHome');
   };
 
