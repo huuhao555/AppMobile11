@@ -4,6 +4,9 @@ import menu from '../../../../../assets/image/menu.png'
 
 import SwitchComponent from '../../../../components/Switch/Switch';
 
+import SpeedControl from '../../../../components/SpeedControl';
+
+// import Router from '../../../../router/router';
 
 
 
@@ -21,20 +24,23 @@ const HomeAppScreen = () => {
         <View style={styles.container}>
         <View style={styles.row}>
             <SwitchComponent
-              label="💡"
+              
               value={isSwitch1Enabled}
               onValueChange={toggleSwitch1}
               emoji="💡"
             />
             <SwitchComponent
-              label="❄️"
+          
               value={isSwitch2Enabled}
               onValueChange={toggleSwitch2}
               emoji="❄️"
             />
+            
           </View>
          
         </View>
+        {/* <SpeedControl/> */}
+        {/* <Router/> */}
       </SafeAreaView>
     
   );
@@ -62,7 +68,7 @@ const styles = StyleSheet.create({
     width: 25,
     height: 25,
     top: 10,
-    left: 5,
+    left: 10,
     padding: 10,
   }
 });

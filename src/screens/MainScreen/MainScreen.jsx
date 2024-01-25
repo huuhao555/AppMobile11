@@ -40,7 +40,7 @@ const CustomTabBarButton = ({ children, onPress }) => {
         height: 70,
         borderRadius: 50,
 
-        backgroundColor: '#E32F45'
+        backgroundColor: '#3CC1C1'
       }}>
         {children}
       </View>
@@ -69,8 +69,8 @@ const MainScreen = () => {
           shadowColor: '#000',
           shadowOpacity: 0.15,
           shadowOffset:{
-            width: 10,
-            height: 10,
+            width: 5,
+            height: 5,
           }
         }
       }}
@@ -133,7 +133,7 @@ const MainScreen = () => {
         style={{
           width: 40,
           height: 40,
-          tintColor: focused ? '#fff' : '#ccc',
+          tintColor: focused ? '#E32F45' : '#fff',
           marginTop: 10,
         }}
       />
@@ -143,20 +143,19 @@ const MainScreen = () => {
     )
   }}
 />
- 
          <Tab.Screen 
-        name=" ,"
-        component={SmartScreen} 
-        options={{
-          tabBarIcon: ({focused}) => (
-            <View style={styles.root}>
-              <Image 
-                source={smart}
-                resizeMode='contain'
-                style={{
-                  tintColor: focused ? '#E32F45' : '#748C94',
-                  ... styles.icon
-                }}
+            name=" ,"
+            component={SmartScreen} 
+            options={{
+              tabBarIcon: ({focused}) => (
+                <View style={styles.root}>
+                  <Image 
+                    source={smart}
+                    resizeMode='contain'
+                    style={{
+                      tintColor: focused ? '#E32F45' : '#748C94',
+                      ... styles.icon
+                    }}
               />
               <Text style={{
                 fontStyle: 'normal',

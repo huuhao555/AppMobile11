@@ -21,7 +21,7 @@ const SwitchComponent = ({ label, value, onValueChange, emoji }) => {
 
 const styles = StyleSheet.create({
   switchContainer: {
-    backgroundColor: 'rgba(175, 238, 238, 0.7)',
+    backgroundColor: 'rgba(175, 238, 238, 0.8)',
     width: 150,
     marginVertical: 10,
     borderRadius: 15,
