@@ -1,6 +1,7 @@
 import React from 'react';
 import {View,SafeAreaView,Text, StyleSheet} from 'react-native';
 import Navigation from './src/navigation';
+import AutomationScreen from './src/screens/MainScreen/App/ControlDeviceSceen/AutomationScreen';
 
 const App = () => {
   return (
@@ -13,7 +14,7 @@ const App = () => {
 const styles = StyleSheet.create({
   root:{
     flex: 1,
-    // backgroundColor: '#AFEEEE',
+    backgroundColor: '#ddd',
   }
 })
 

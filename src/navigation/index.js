@@ -11,9 +11,14 @@ import NewPasswordScreen from '../screens/NewPasswordScreen'
 import HomeAppScreen from '../screens/HomeAppScreen';
 import InputEmailComfirmScreen from '../screens/InputEmailComfirmScreen';
 
+import ControlDeviceSceen from '../screens/MainScreen/App/ControlDeviceSceen';
 import MainScreen from '../screens/MainScreen';
+import SmartScreen from '../screens/MainScreen/App/SmartScreen';
 
- 
+import AutomationScreen from '../screens/MainScreen/App/ControlDeviceSceen/AutomationScreen';
+import ScenarioScreen from '../screens/MainScreen/App/ControlDeviceSceen/ScenarioScreen'; 
+
+
 const Stack = createNativeStackNavigator();
 const Navigation = ({ navigation }) => {
   return (
@@ -28,8 +33,13 @@ const Navigation = ({ navigation }) => {
         <Stack.Screen name="HomeApp" component={HomeAppScreen}/>
         <Stack.Screen name="InputEmailComfirm" component={InputEmailComfirmScreen}/>
         <Stack.Screen name="MainHome" component={MainScreen}/>
+        <Stack.Screen name="ControlDevice" component={ControlDeviceSceen}/>
+        <Stack.Screen name="Smart" component={SmartScreen}/>
+        <Stack.Screen name="Automation" component={AutomationScreen}/>
+        <Stack.Screen name="Scenario" component={ScenarioScreen}/>
        
-      
+        
+
       </Stack.Navigator>
     </NavigationContainer>
   )

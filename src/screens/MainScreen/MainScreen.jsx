@@ -20,6 +20,7 @@ import { HoverEffect } from 'react-native-gesture-handler';
 
 
 const Tab = createBottomTabNavigator();
+
 const CustomTabBarButton = ({ children, onPress }) => {
   return (
     <TouchableOpacity
@@ -39,7 +40,6 @@ const CustomTabBarButton = ({ children, onPress }) => {
         width: 70,
         height: 70,
         borderRadius: 50,
-
         backgroundColor: '#3CC1C1'
       }}>
         {children}
@@ -51,78 +51,85 @@ const CustomTabBarButton = ({ children, onPress }) => {
 
 const MainScreen = () => {
   return (
-
-      <Tab.Navigator 
-  
+    <Tab.Navigator
       screenOptions={{
         headerShown: false, 
         tabBarStyle:{
-          position: 'absolute',
-          bottom: 20,
-          // flexDirection: 'row', 
-          justifyContent: 'space-around',
-          alignItems: 'center',
-          marginHorizontal: 20, 
-          backgroundColor: '#fff', 
-          height: 60,
-          borderRadius: 15,
-          shadowColor: '#000',
-          shadowOpacity: 0.15,
-          shadowOffset:{
-            width: 5,
-            height: 5,
-          }
-        }
+        position: 'absolute',
+        bottom: 20,
+        // flexDirection: 'row', 
+        justifyContent: 'space-around',
+        alignItems: 'center',
+        marginHorizontal: 20, 
+        backgroundColor: '#fff', 
+        height: 60,
+        borderRadius: 15,
+        shadowColor: '#000',
+        shadowOpacity: 0.15,
+        shadowOffset:{
+        width: 5,
+        height: 5,
+      }
+      }
       }}
       >
-      <Tab.Screen 
-        name= " ."
-        component={HomeScreen} 
-        options={{
-          tabBarIcon: ({focused}) => (
-            <View style={styles.root}>
-              <Image 
-                source={home}
-                resizeMode='contain'
-                style={{
-                  width: 25,
-                  height: 25,
-                  tintColor: focused ? '#E32F45' : '#748C94'
-                }}
-              />
-              <Text style={{
-                fontStyle: 'normal',
-                marginTop: 5,
-                fontSize: 12,
-                color: focused ? '#E32F45' : '#748C94'
-                }}>HOME</Text>
-            </View>
-          )}}
+    <Tab.Screen 
+      name="Dashboard"
+      component={HomeScreen} 
+      options={({route}) => ({
+        tabBarLabel: route.name === 'Dashboard' ? ' ' : 'Dashboard',
+      tabBarIcon: ({focused}) => (
+    <View style={styles.root}>
+    <Image 
+      source={home}
+      resizeMode='contain'
+      style={{
+        width: 25,
+        height: 25,
+        tintColor: focused ? '#E32F45' : '#748C94'
+      }}
+      />
+    <Text 
+      style={{
+        fontStyle: 'normal',
+        marginTop: 5,
+        fontSize: 12,
+        color: focused ? '#E32F45' : '#748C94',
+
+      }}>HOME
+    </Text>
+    </View>
+      )
+      })}
+    />
+
+<Tab.Screen 
+  name="Add by me"
+  component={AddScreen} 
+  options={({route}) => ({
+    tabBarLabel: route.name === 'Add by me' ? ' ' : 'Add by me',
+    tabBarIcon: ({focused}) => (
+      <View style={styles.root}>
+        <Image 
+          source={add}
+          resizeMode='contain'
+          style={{
+            width: 25,
+            height: 25,
+            tintColor: focused ? '#E32F45' : '#748C94'
+          }}
         />
-        <Tab.Screen 
-        name = " . "
-        component={AddScreen} 
-        options={{
-          tabBarIcon: ({focused}) => (
-            <View style={styles.root}>
-              <Image 
-                source={add}
-                resizeMode='contain'
-                style={{
-                  width: 25,
-                  height: 25,
-                  tintColor: focused ? '#E32F45' : '#748C94'
-                }}
-              />
-              <Text style={{
-                fontStyle: 'normal',
-                marginTop: 5,
-                fontSize: 12,
-                color: focused ? '#E32F45' : '#748C94'
-                }}>ADD</Text>
-            </View>
-          )}}
-        /> 
+        <Text style={{
+          fontStyle: 'normal',
+          marginTop: 5,
+          fontSize: 12,
+          color: focused ? '#E32F45' : '#748C94',
+         
+        }}>ADD</Text>
+      </View>
+    )
+  })}
+/>
         <Tab.Screen 
   name=" "
   component={MicroScreen} 
@@ -143,56 +150,61 @@ const MainScreen = () => {
     )
   }}
 />
-         <Tab.Screen 
-            name=" ,"
-            component={SmartScreen} 
-            options={{
-              tabBarIcon: ({focused}) => (
-                <View style={styles.root}>
-                  <Image 
-                    source={smart}
-                    resizeMode='contain'
-                    style={{
-                      tintColor: focused ? '#E32F45' : '#748C94',
-                      ... styles.icon
-                    }}
-              />
-              <Text style={{
-                fontStyle: 'normal',
-                marginTop: 5,
-                fontSize: 12,
-                color: focused ? '#E32F45' : '#748C94'
-                }}>SMART</Text>
-            </View>
-          )}}
+<Tab.Screen 
+  name="Smart"
+  component={SmartScreen} 
+  options={({route}) => ({
+    tabBarLabel: route.name === 'Smart' ? ' ' : 'Smart',
+    tabBarIcon: ({focused}) => (
+      <View style={styles.root}>
+        <Image 
+          source={smart}
+          resizeMode='contain'
+          style={{
+            width: 25,
+            height: 25,
+            tintColor: focused ? '#E32F45' : '#748C94'
+          }}
         />
-        <Tab.Screen 
-        name= ","
-        component={NotificationScreen} 
-        options={{
-          tabBarIcon: ({focused}) => (
-            <View style={styles.root}>
-              <Image 
-                source={notification}
-                resizeMode='contain'
-                style={{
-                  tintColor: focused ? '#E32F45' : '#748C94',
-                  ... styles.icon
-                }}
-              />
-              <Text style={{
-                fontStyle: 'normal',
-                marginTop: 5,
-                fontSize: 12,
-                color: focused ? '#E32F45' : '#748C94',
-                flexDirection: 'row',
-                justifyContent: 'space-evenly'
-                }}>NOTIFICATION</Text>
-            </View>
-          )}}
-        /> 
-        
-      </Tab.Navigator>
+        <Text style={{
+          fontStyle: 'normal',
+          marginTop: 5,
+          fontSize: 12,
+          color: focused ? '#E32F45' : '#748C94',
+         
+        }}>SMART</Text>
+      </View>
+    )
+  })}
+/>
+<Tab.Screen 
+  name="Notification"
+  component={NotificationScreen} 
+  options={({route}) => ({
+    tabBarLabel: route.name === 'Notification' ? ' ' : 'Notification',
+    tabBarIcon: ({focused}) => (
+      <View style={styles.root}>
+        <Image 
+          source={notification}
+          resizeMode='contain'
+          style={{
+            width: 25,
+            height: 25,
+            tintColor: focused ? '#E32F45' : '#748C94'
+          }}
+        />
+        <Text style={{
+          fontStyle: 'normal',
+          marginTop: 5,
+          fontSize: 12,
+          color: focused ? '#E32F45' : '#748C94',
+         
+        }}>NOTIFICATION</Text>
+      </View>
+    )
+  })}
+/> 
+    </Tab.Navigator>
    
   );
 };
