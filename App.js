@@ -1,12 +1,13 @@
 import React from 'react';
 import {View,SafeAreaView,Text, StyleSheet} from 'react-native';
 import Navigation from './src/navigation';
-import AutomationScreen from './src/screens/MainScreen/App/ControlDeviceSceen/AutomationScreen';
+import SpeedControl from './src/components/SpeedControl/SpeedControl';
+
 
 const App = () => {
   return (
     <SafeAreaView style={styles.root}>
-     <Navigation/>
+     <SpeedControl/>
     </SafeAreaView>
   );
 }

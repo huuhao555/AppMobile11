@@ -98,6 +98,7 @@ const ControlDeviceSceen = ({ navigation }) => {
           <Text style={styles.text}>Add new </Text>
         </TouchableOpacity>
       </View>
+      
     </View>
   );
 };

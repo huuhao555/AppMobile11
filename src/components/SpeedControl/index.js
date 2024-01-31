@@ -1,1 +1,1 @@
-export  {default} from './SpeedControl'
+export {default} from './SpeedControl'
