@@ -7,7 +7,7 @@ import SpeedControl from './src/components/SpeedControl/SpeedControl';
 const App = () => {
   return (
     <SafeAreaView style={styles.root}>
-     <SpeedControl/>
+     <Navigation/>
     </SafeAreaView>
   );
 }
