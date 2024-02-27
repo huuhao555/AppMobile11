@@ -1,29 +1,29 @@
 import React, { useState } from 'react';
-import { View, SafeAreaView, Image, StyleSheet,Slider, Text } from 'react-native';
+import { View, SafeAreaView, Image, StyleSheet,Slider, Text, TouchableOpacity } from 'react-native';
 import menu from '../../../../../assets/image/menu.png'
 import SwitchComponent from '../../../../components/Switch/Switch';
+import back from '../../../../../assets/image/back.png'
 
 
 
-const HomeAppScreen = () => {
+const HomeAppScreen = ({navigation}) => {
   const [isSwitch1Enabled, setSwitch1Enabled] = useState(false);
   const [isSwitch2Enabled, setSwitch2Enabled] = useState(false);
   const [speed, setSpeed] = useState(0); // Tốc độ ban đầuconst Slider = require('@react-native-community/slider').Slider;
 
-
-
-
-
   const toggleSwitch1 = () => setSwitch1Enabled(prevState => !prevState);
   const toggleSwitch2 = () => setSwitch2Enabled(prevState => !prevState);
 
-  const onSpeedChange = value => {
-    setSpeed(value);
-  };
+  const comeBack = () =>  {
+    navigation.goBack();
+    }
 
   return (
     <SafeAreaView style={styles.safeAreaView}>
-      <Image source={menu} style={styles.menu} />
+      <TouchableOpacity onPress={comeBack}>
+        <Image source={back} style={styles.back} />
+       
+      </TouchableOpacity>
       <View style={styles.container}>
         <View style={styles.row}>
           <SwitchComponent
@@ -59,8 +59,8 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
   },
-  menu: {
-    position: 'absolute',
+  back: {
+    // position: 'absolute',
     width: 25,
     height: 25,
     top: 10,

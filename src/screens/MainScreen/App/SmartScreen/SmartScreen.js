@@ -10,6 +10,8 @@ const SmartScreen = ({ route, navigation }) => {
 
   const handleAddPress = () => {
     navigation.navigate('ControlDevice');
+    
+    
   };
 
   return (
